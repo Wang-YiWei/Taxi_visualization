@@ -4,14 +4,140 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <title>NcKuCsIe - Taxi Visualization</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bs.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
 </head>
 
-<body>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">高雄計程車資料視覺化</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">乘客</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#services">司機</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">有能力的人</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container1">
+        <div class="row">
+            <div class="col">
+
+            </div>
+
+            <div class="divBtns col">
+                <div class="mainUpperLeft row">
+                    <div class="mainText">
+                        <p>
+                            <span style="font-size:150px" color="orange">Taxi </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btnModes btn btn-primary">Primary</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btnModes btn btn-success">Success</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btnModes btn btn-warning">Warning</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="bg-primary text-white">
+        <div class="container text-center">
+            <h1>Welcome to Scrolling Nav</h1>
+            <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="row">
+            <div class="col">
+                <div class="spanChart0">
+                </div>
+            </div>
+            <div class="col">
+                症狀一 「人客到底抵叨位?」 你是否常常繞東繞西卻找不到半個客人?又或者載完乘客後因為找不到回頭客而不知該何去何從?讓你不禁想大喊:「到底客人在哪裡?」
+            </div>
+        </div>
+
+    </section>
+
+    <section id="services" class="bg-light">
+        <div class="row">
+            <div class="col">
+                <div class="spanChart1">
+                </div>
+            </div>
+            <div class="col">
+                症狀一 「人客到底抵叨位?」 你是否常常繞東繞西卻找不到半個客人?又或者載完乘客後因為找不到回頭客而不知該何去何從?讓你不禁想大喊:「到底客人在哪裡?」
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="row">
+            <div class="col">
+                <div class="spanChart2">
+                </div>
+            </div>
+            <div class="col">
+                症狀一 「人客到底抵叨位?」 你是否常常繞東繞西卻找不到半個客人?又或者載完乘客後因為找不到回頭客而不知該何去何從?讓你不禁想大喊:「到底客人在哪裡?」
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container1">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="javascript/index.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+    <script src="javascript/bundle.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="javascript/jquery-easing.js"></script>
+    <!-- Custom JavaScript for this theme -->
+    <script src="javascript/scrolling-nav.js"></script>
+    <script src="javascript/main.js"></script>
+    <script src="javascript/empty_rate.js"></script>
+    <script src="javascript/money_day.js"></script>
+
+
 </body>
 
 </html>

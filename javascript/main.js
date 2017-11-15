@@ -1,0 +1,6 @@
+$(".pictaxi").height(window.innerHeight)
+$(".pictaxi").width(window.innerWidth)
+$(".divBtns").height(window.innerHeight)
+$(".mainUpperLeft").height(0.6 * window.innerHeight)
+$(".btnModes").height(100)
+$(".btnModes").width(200)
