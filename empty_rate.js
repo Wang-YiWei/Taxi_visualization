@@ -12,7 +12,7 @@ var rate_svg = d3.select("body").append("svg")
 
 rate_svg.append("g")
     .append('text')
-    .attr("transform", "translate("+rate_width+",0)")
+    .attr("transform", "translate(" + rate_width + ",0)")
     .attr("dy", "1.20em")
     .attr("font-size", "1.5em")
     .style("text-anchor", "middle")
@@ -77,6 +77,7 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
             value: +Math.floor(count_rate[i])
         });
     }
+    console.log(object_rate)
     for (i = 0; i < object_rate.length; i++) {
         object_rate_donut.push({
             key: i * 10,
@@ -130,15 +131,22 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
         .enter().append("g");
     var rate_donut_text = rate_donut.append("text")
         .attr("transform", "translate(" + rate_width * 3 / 2 + "," + rate_height / 2 + ")")
-        .attr("dy", ".00em")
+        .attr("dy", "2.60em")
         .attr("font-size", "1.5em")
         .style("text-anchor", "middle")
         .style("fill", "black")
         .text("");
     var rate_donut_text1 = rate_donut.append("text")
         .attr("transform", "translate(" + rate_width * 3 / 2 + "," + rate_height / 2 + ")")
-        .attr("dy", "1.20em")
+        .attr("dy", "3.80em")
         .attr("font-size", "1.5em")
+        .style("text-anchor", "middle")
+        .style("fill", "black")
+        .text("");
+    var rate_donut_text2 = rate_donut.append("text")
+        .attr("transform", "translate(" + rate_width * 3 / 2 + "," + rate_height / 2 + ")")
+        .attr("dy", ".00em")
+        .attr("font-size", "6em")
         .style("text-anchor", "middle")
         .style("fill", "black")
         .text("");
@@ -168,9 +176,11 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
                 .attr("d", temp_rate_arc)
                 .attr("opacity", 0.8);
             rate_donut_text.append("tspan")
-                .html("有" + count_rate_function(select_value) + "%的司機" + "<tspan><br>");
+                .html("的司機" + "<tspan><br>");
             rate_donut_text1.append("tspan")
                 .html("空車率在" + select_key * 10 + "%到" + (select_key + 1) * 10 + "%之間");
+            rate_donut_text2.append("tspan")
+                .html(count_rate_function(select_value) + "%");
             rate_donut_cir
                 .attr("opacity", 0.05)
                 .style("fill", function (d) {
@@ -187,6 +197,8 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
             rate_donut_text
                 .text("");
             rate_donut_text1
+                .text("")
+            rate_donut_text2
                 .text("")
         })
     var rate_donut_svg = rate_svg.selectAll(".rate_svg");
