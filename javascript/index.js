@@ -6,7 +6,7 @@
 d3.csv("csvData/span.csv", function(error, data) {
     if (error) throw error;
 
-    var spanMargin = { top: 20, right: 20, bottom: 30, left: 40 },
+    var spanMargin = { top: 20, right: 20, bottom: 60, left: 40 },
         spanWidth = 0.4 * screen.availWidth - spanMargin.left - spanMargin.right,
         spanHeight = 0.4 * screen.availHeight - spanMargin.top - spanMargin.bottom;
 
@@ -61,7 +61,7 @@ d3.csv("csvData/span.csv", function(error, data) {
                 .style("left", d3.event.pageX - 50 + "px")
                 .style("top", d3.event.pageY - 100 + "px")
                 .style("display", "inline-block")
-                .html((d.span) + "<br>" + "交易次數:" + (d.value));
+                .html((d.span) + ":00-" + (parseInt(d.span) + 1) + ":00<br>" + "交易次數:" + (d.value));
         })
         .on("mouseout", function(d) {
             d3.select(this).attr("opacity", 1);
@@ -82,14 +82,21 @@ d3.csv("csvData/span.csv", function(error, data) {
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .attr("fill", "black")
-        .text("三個月來總交易次數(次)");
+        .text("總交易次數(次)")
+        .attr("font-size", "13px");
+
+    spanSVG.append("text")
+        .attr('x', 0.5 * spanWidth)
+        .attr('y', spanHeight + 40)
+        .attr('text-anchor', 'middle')
+        .text("七月份高雄計程車每小時交易量");
 
 });
 
 d3.csv("csvData/span15.csv", function(error, data) {
     if (error) throw error;
 
-    var spanMargin = { top: 20, right: 20, bottom: 30, left: 40 },
+    var spanMargin = { top: 20, right: 20, bottom: 60, left: 40 },
         spanWidth = 0.4 * screen.availWidth - spanMargin.left - spanMargin.right,
         spanHeight = 0.4 * screen.availHeight - spanMargin.top - spanMargin.bottom;
 
@@ -144,7 +151,7 @@ d3.csv("csvData/span15.csv", function(error, data) {
                 .style("left", d3.event.pageX - 50 + "px")
                 .style("top", d3.event.pageY - 100 + "px")
                 .style("display", "inline-block")
-                .html((d.span) + "<br>" + "交易次數:" + (d.value));
+                .html((d.span) + ":00-" + (parseInt(d.span) + 1) + ":00<br>" + "交易次數:" + (d.value));
         })
         .on("mouseout", function(d) {
             d3.select(this).attr("opacity", 1);
@@ -165,7 +172,14 @@ d3.csv("csvData/span15.csv", function(error, data) {
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .attr("fill", "black")
-        .text("三個月來總交易次數(次)");
+        .text("總交易次數(次)")
+        .attr("font-size", "13px");
+
+    spanSVG.append("text")
+        .attr('x', 0.5 * spanWidth)
+        .attr('y', spanHeight + 40)
+        .attr('text-anchor', 'middle')
+        .text("七月份高雄計程車每小時交易量");
 
 
 });
@@ -173,7 +187,7 @@ d3.csv("csvData/span15.csv", function(error, data) {
 d3.csv("csvData/span67.csv", function(error, data) {
     if (error) throw error;
 
-    var spanMargin = { top: 20, right: 20, bottom: 30, left: 40 },
+    var spanMargin = { top: 20, right: 20, bottom: 60, left: 40 },
         spanWidth = 0.4 * screen.availWidth - spanMargin.left - spanMargin.right,
         spanHeight = 0.4 * screen.availHeight - spanMargin.top - spanMargin.bottom;
 
@@ -228,7 +242,7 @@ d3.csv("csvData/span67.csv", function(error, data) {
                 .style("left", d3.event.pageX - 50 + "px")
                 .style("top", d3.event.pageY - 100 + "px")
                 .style("display", "inline-block")
-                .html((d.span) + "<br>" + "交易次數:" + (d.value));
+                .html((d.span) + ":00-" + (parseInt(d.span) + 1) + ":00<br>" + "交易次數:" + (d.value));
         })
         .on("mouseout", function(d) {
             d3.select(this).attr("opacity", 1);
@@ -249,7 +263,14 @@ d3.csv("csvData/span67.csv", function(error, data) {
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .attr("fill", "black")
-        .text("三個月來總交易次數(次)");
+        .text("總交易次數(次)")
+        .attr("font-size", "13px");
+
+    spanSVG.append("text")
+        .attr('x', 0.5 * spanWidth)
+        .attr('y', spanHeight + 40)
+        .attr('text-anchor', 'middle')
+        .text("七月份高雄計程車每小時交易量");
 
 
 });

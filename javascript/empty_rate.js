@@ -28,11 +28,11 @@ var rate_arc = d3.arc()
 
 var pie = d3.pie()
     .sort(null)
-    .value(function (d) { return d.value; })
+    .value(function(d) { return d.value; })
 
 var rate_color = d3.scaleLinear()
     .range(["yellow", "red"]);
-d3.csv("./csvData/0703empty.csv", function (error, data) {
+d3.csv("./csvData/0703empty.csv", function(error, data) {
     var count_rate = new Array(10);
     var object_rate = [];
     var object_rate_donut = [];
@@ -47,7 +47,7 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
     count_rate[7] = 0
     count_rate[8] = 0
     count_rate[9] = 0
-    //console.log(count_rate[6])
+        //console.log(count_rate[6])
     for (i = 0; i < data.length; i++) {
         if (data[i].empty < 10) {
             count_rate[0] == count_rate[0] + 1;
@@ -85,10 +85,10 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
         });
     }
     console.log(object_rate)
-    //console.log(object_rate.map(function (d) { return d.key }));
-    x.domain(object_rate.map(function (d, i) { return d.key }));
-    y.domain([0, d3.max(object_rate, function (d, i) { return d.value; })])
-    rate_color.domain([0, d3.max(object_rate, function (d, i) { return d.value; })]);
+        //console.log(object_rate.map(function (d) { return d.key }));
+    x.domain(object_rate.map(function(d, i) { return d.key }));
+    y.domain([0, d3.max(object_rate, function(d, i) { return d.value; })])
+    rate_color.domain([0, d3.max(object_rate, function(d, i) { return d.value; })]);
 
     rate_svg.append("g")
         .attr("class", "axis axis--x")
@@ -111,16 +111,16 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
         .enter().append('g');
     rate_bar.append("rect")
         .attr("opacity", 0.8)
-        .attr("x", function (d) { return x(d.key) + 50; })
-        .attr("y", function (d) { return y(d.value); })
+        .attr("x", function(d) { return x(d.key) + 50; })
+        .attr("y", function(d) { return y(d.value); })
         .attr("width", x.bandwidth())
-        .attr("height", function (d) { return rate_height - y(d.value) })
-        .attr("fill", function (d) { return rate_color(d.value) })
-        .on("mouseover", function (d) {
+        .attr("height", function(d) { return rate_height - y(d.value) })
+        .attr("fill", function(d) { return rate_color(d.value) })
+        .on("mouseover", function(d) {
             d3.select(this)
                 .attr("opacity", 1);
         })
-        .on("mouseout", function (d) {
+        .on("mouseout", function(d) {
             d3.select(this)
                 .attr("opacity", 0.8);
         });
@@ -163,8 +163,8 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
         .attr("d", rate_arc)
         .attr("opacity", 0.8)
         .attr("stroke", "white")
-        .style("fill", function (d) { return rate_color(d.value) })
-        .on("mouseover", function (d) {
+        .style("fill", function(d) { return rate_color(d.value) })
+        .on("mouseover", function(d) {
             //console.log("111");
             var temp_rate_arc = d3.arc()
                 .outerRadius(rate_radius - 20)
@@ -183,11 +183,11 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
                 .html(count_rate_function(select_value) + "%");
             rate_donut_cir
                 .attr("opacity", 0.05)
-                .style("fill", function (d) {
+                .style("fill", function(d) {
                     return rate_color(select_value);
                 })
         })
-        .on("mouseout", function (d) {
+        .on("mouseout", function(d) {
             d3.select(this)
                 .attr("d", rate_arc)
                 .attr("opacity", 0.8);
@@ -209,6 +209,7 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
         tip = "有" + data + "的司機" + "<tspan><br>" + "空車率在" + i * 10 + "到" + (i + 1) * 10 + "之間";
         return tip;
     }
+
     function count_rate_function(data) {
         return data / count_rate.length;
     }

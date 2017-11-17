@@ -81,13 +81,13 @@ d3.csv("./csvData/money_day_date.csv", function(d) {
         .attr("stroke", "white")
         .style("fill", function(d) { return money_color(d.value) })
         .on("mouseover", function(d) {
-            console.log("111");
+            //console.log("111");
             var temp_money_arc = d3.arc()
                 .outerRadius(money_radius - 20)
                 .innerRadius(money_radius - 100);
             var select_value = d3.select(this).data()[0].value;
             var select_key = d3.select(this).data()[0].data.percent;
-            console.log(d3.select(this).data()[0].data.percent);
+            //console.log(d3.select(this).data()[0].data.percent);
             d3.select(this)
                 .attr("d", temp_money_arc)
                 .attr("opacity", 0.8);

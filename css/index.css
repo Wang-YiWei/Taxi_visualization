@@ -1,7 +1,12 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+* {
+    font-family: 'Noto Sans TC';
+}
+
 .container1 {
-    background: url(../image/taxidark.jpg);
+    /* background: url(../image/taxidark.jpg);
     background-size: 100%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 .toolTip {
