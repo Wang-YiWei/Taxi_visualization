@@ -1,10 +1,10 @@
 var rate_margin = { top: 20, right: 20, bottom: 70, left: 40 },
-    rate_width = 800 - rate_margin.left - rate_margin.right,
-    rate_height = 600 - rate_margin.top - rate_margin.bottom,
+    rate_width = screen.availWidth*0.4 - rate_margin.left - rate_margin.right,
+    rate_height =  screen.availWidth*0.3 - rate_margin.top - rate_margin.bottom,
     rate_radius = Math.min(rate_width, rate_height) / 2;
 
-var rate_svg = d3.select("body").append("svg")
-    .attr("width", (rate_width + rate_margin.left + rate_margin.right) * 2)
+var rate_svg = d3.select(".spanChart1").append("svg")
+    .attr("width", (rate_width + rate_margin.left + rate_margin.right))
     .attr("height", (rate_height + rate_margin.top + rate_margin.bottom))
     .append("g")
     .attr("class", "rate_svg")
@@ -12,18 +12,18 @@ var rate_svg = d3.select("body").append("svg")
 
 rate_svg.append("g")
     .append('text')
-    .attr("transform", "translate(" + rate_width + ",0)")
+    .attr("transform", "translate(100,0)")
     .attr("dy", "1.20em")
-    .attr("font-size", "1.5em")
+    .attr("font-size", "1.0em")
     .style("text-anchor", "middle")
     .style("fill", "black")
     .text("計程車司機空車率");
 
-var x = d3.scaleBand().rangeRound([0, rate_width]).padding(0.1),
+var x = d3.scaleBand().rangeRound([0, rate_width/5]).padding(0.1),
     y = d3.scaleLinear().rangeRound([rate_height, 0]);
 
 var rate_arc = d3.arc()
-    .outerRadius(rate_radius - 30)
+    .outerRadius(rate_radius - 50)
     .innerRadius(rate_radius - 100);
 
 var pie = d3.pie()
@@ -87,18 +87,18 @@ d3.csv("./csvData/0703empty.csv", function(error, data) {
     console.log(object_rate)
         //console.log(object_rate.map(function (d) { return d.key }));
     x.domain(object_rate.map(function(d, i) { return d.key }));
-    y.domain([0, d3.max(object_rate, function(d, i) { return d.value; })])
+    y.domain([0, d3.max(object_rate, function(d) { return d.value; })])
     rate_color.domain([0, d3.max(object_rate, function(d, i) { return d.value; })]);
 
     rate_svg.append("g")
         .attr("class", "axis axis--x")
-        .attr("transform", "translate(50," + rate_height + ")")
+        .attr("transform", "translate(10," + rate_height + ")")
         .call(d3.axisBottom(x));
 
     rate_svg.append("g")
         .attr("class", "axis axis--y")
         .call(d3.axisLeft(y))
-        .attr("transform", "translate(50,0)")
+        .attr("transform", "translate(30,0)")
         .append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
@@ -111,10 +111,10 @@ d3.csv("./csvData/0703empty.csv", function(error, data) {
         .enter().append('g');
     rate_bar.append("rect")
         .attr("opacity", 0.8)
-        .attr("x", function(d) { return x(d.key) + 50; })
-        .attr("y", function(d) { return y(d.value); })
+        .attr("x", function(d) { return x(d.key)+10; })
+        .attr("y", function(d) { return y(d.value)-0.5; })
         .attr("width", x.bandwidth())
-        .attr("height", function(d) { return rate_height - y(d.value) })
+        .attr("height", function(d) { return rate_height - y(d.value)+0.5 })
         .attr("fill", function(d) { return rate_color(d.value) })
         .on("mouseover", function(d) {
             d3.select(this)
@@ -130,36 +130,36 @@ d3.csv("./csvData/0703empty.csv", function(error, data) {
         .data(pie(object_rate))
         .enter().append("g");
     var rate_donut_text = rate_donut.append("text")
-        .attr("transform", "translate(" + rate_width * 3 / 2 + "," + rate_height / 2 + ")")
-        .attr("dy", "2.60em")
-        .attr("font-size", "1.5em")
+        .attr("transform", "translate(" + rate_width/1.2 + "," + rate_height / 2 + ")")
+        .attr("dy", "2.20em")
+        .attr("font-size", "1.0em")
         .style("text-anchor", "middle")
         .style("fill", "black")
         .text("");
     var rate_donut_text1 = rate_donut.append("text")
-        .attr("transform", "translate(" + rate_width * 3 / 2 + "," + rate_height / 2 + ")")
-        .attr("dy", "3.80em")
-        .attr("font-size", "1.5em")
+        .attr("transform", "translate(" + rate_width/1.2 + "," + rate_height / 2 + ")")
+        .attr("dy", "3.40em")
+        .attr("font-size", "1.0em")
         .style("text-anchor", "middle")
         .style("fill", "black")
         .text("");
     var rate_donut_text2 = rate_donut.append("text")
-        .attr("transform", "translate(" + rate_width * 3 / 2 + "," + rate_height / 2 + ")")
+        .attr("transform", "translate(" + rate_width/1.2  + "," + rate_height / 2 + ")")
         .attr("dy", ".00em")
-        .attr("font-size", "6em")
+        .attr("font-size", "5em")
         .style("text-anchor", "middle")
         .style("fill", "black")
         .text("");
 
     var rate_donut_cir = rate_donut.append('circle')
-        .attr("transform", "translate(" + rate_width * 3 / 2 + "," + rate_height / 2 + ")")
+        .attr("transform", "translate(" + rate_width/1.2 + "," + rate_height / 2 + ")")
         .attr("cx", "0")
         .attr("cy", "0")
         .attr("r", rate_radius - 105)
         .style("fill", "white");
 
     rate_donut.append("path")
-        .attr("transform", "translate(" + rate_width * 3 / 2 + "," + rate_height / 2 + ")")
+        .attr("transform", "translate(" + rate_width/1.2 + "," + rate_height / 2 + ")")
         .attr("d", rate_arc)
         .attr("opacity", 0.8)
         .attr("stroke", "white")
@@ -168,7 +168,7 @@ d3.csv("./csvData/0703empty.csv", function(error, data) {
             //console.log("111");
             console.log(data.length)
             var temp_rate_arc = d3.arc()
-                .outerRadius(rate_radius - 20)
+                .outerRadius(rate_radius - 50)
                 .innerRadius(rate_radius - 100);
             var select_value = d3.select(this).data()[0].value;
             var select_key = d3.select(this).data()[0].index;
