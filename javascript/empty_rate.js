@@ -211,7 +211,7 @@ d3.csv("./csvData/0703empty.csv", function(error, data) {
         return tip;
     }
 
-    function count_rate_function(data) {
-        return data / count_rate.length;
+    function count_rate_function(d) {
+        return Math.ceil(d * 100 / data.length);
     }
 })
