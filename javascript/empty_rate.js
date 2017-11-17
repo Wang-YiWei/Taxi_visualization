@@ -166,6 +166,7 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
         .style("fill", function (d) { return rate_color(d.value) })
         .on("mouseover", function (d) {
             //console.log("111");
+            console.log(data.length)
             var temp_rate_arc = d3.arc()
                 .outerRadius(rate_radius - 20)
                 .innerRadius(rate_radius - 100);
@@ -209,7 +210,8 @@ d3.csv("./csvData/0703empty.csv", function (error, data) {
         tip = "有" + data + "的司機" + "<tspan><br>" + "空車率在" + i * 10 + "到" + (i + 1) * 10 + "之間";
         return tip;
     }
-    function count_rate_function(data) {
-        return data / count_rate.length;
+    function count_rate_function(d) {
+        return Math.ceil(d*100/ data.length);
+        
     }
 })
