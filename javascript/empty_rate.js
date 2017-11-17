@@ -166,6 +166,7 @@ d3.csv("./csvData/0703empty.csv", function(error, data) {
         .style("fill", function(d) { return rate_color(d.value) })
         .on("mouseover", function(d) {
             //console.log("111");
+            console.log(data.length)
             var temp_rate_arc = d3.arc()
                 .outerRadius(rate_radius - 20)
                 .innerRadius(rate_radius - 100);
