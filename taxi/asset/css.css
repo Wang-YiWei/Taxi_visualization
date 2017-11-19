@@ -51,8 +51,10 @@ body{
     /*margin:10px;*/
 }
 #fixed{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 25px;
     position:fixed;
-    border:1px solid black;
+    left:20%;
 }
 /*#img1{
     z-in

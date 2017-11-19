@@ -31,7 +31,7 @@ var pie = d3.pie()
     .value(function(d) { return d.value; })
 
 var money_color = d3.scaleLinear()
-    .range(["yellow", "red"]);
+    .range(["#99FFFF", "blue"]);
 d3.csv("./csvData/money_day_date.csv", function(d) {
     d.value = +d.value;
     return d;
