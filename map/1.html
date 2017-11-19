@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Heatmaps</title>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtPpeuLAY33XzXc7KwjI1143srY7yt8gA&libraries=visualization">
+    </script>
+  </head>
+
+  <body>
+    <script src="./data1.js"></script>
+    <div id="map" style="width: 400px; height: 400px;"></div>
+    <script>
+     var map, heatmap;
+
+      function initMap1() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: {lat: 22.622654, lng: 120.30558},
+          mapTypeId: 'roadmap'
+        });
+
+        heatmap = new google.maps.visualization.HeatmapLayer({
+          data: getPoints(),
+          map: map,
+          maxIntensity: 15,
+          radius: 15
+        });
+      }
+    initMap1();
+    </script>
+
+  </body>
+</html>
