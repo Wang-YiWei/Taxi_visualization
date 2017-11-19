@@ -7,7 +7,7 @@ var fout;
 var fout2;
 
 $(document).ready(function(){
-    for(i=1;i<=7;i++){
+    for(i=1;i<=11;i++){
         $('#img'+i).hide();
     }
    
