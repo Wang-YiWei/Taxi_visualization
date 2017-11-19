@@ -3,28 +3,75 @@
     font-family: 'Noto Sans TC';
 }
 
-.container1 {
-    /* background: url(../image/taxidark.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat; */
+html,
+body {
+    background-color: #f8f8f8;
+    /* padding-top: 50px; */
+    height: 100%;
+    font-family: 'Noto Sans TC';
 }
 
-.toolTip {
+.cover {
+    width: 100%;
+    height: 100%;
+}
+
+.item>a {
+    display: block;
+    height: 100%;
+}
+
+.full-screen {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#mylink {
+    position: fixed;
+    top: 50%;
+    right: 0px;
+    background: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+#upperleft {
+    background-color: #323232;
+    color: #FFD382;
+}
+
+.carousel-caption {
     position: absolute;
-    display: none;
-    min-width: 80px;
-    height: auto;
-    background: none repeat scroll 0 0 #ffffff;
-    border: 1px solid #6F257F;
-    padding: 14px;
+    right: 40%;
+    bottom: 20 px;
+    left: 40%;
+    z-index: 10;
+    padding-top: 20 px;
+    padding-bottom: 20 px;
+    color: #fff;
     text-align: center;
+    text-shadow: 0 1 px 2 px rgba(0, 0, 0, .6);
+    width: 20%;
+    border: 3px solid #FFD382;
+    opacity: 10%;
 }
 
-.btnModes {
-    margin-top: 60%;
-    margin-left: 1px;
+.carousel-caption p,
+h3 {
+    color: #FFD382;
 }
 
-.mainText {
-    margin-top: 30%;
+#c1,
+#c2 {
+    border: 3 px solid #6A6AFF;
+}
+
+#c1 h3,
+#c1 p,
+#c2 h3,
+#c2 p {
+    color: #0000C6;
 }
