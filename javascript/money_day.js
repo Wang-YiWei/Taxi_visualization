@@ -1,9 +1,9 @@
 var money_margin = { top: 20, right: 20, bottom: 70, left: 40 },
-    money_width = 800 - money_margin.left - money_margin.right,
-    money_height = 600 - money_margin.top - money_margin.bottom,
-    money_radius = Math.min(money_width, money_height) / 2;
+    money_width = screen.availWidth*0.25 - money_margin.left - money_margin.right,
+    money_height = screen.availWidth*0.3 - money_margin.top - money_margin.bottom,
+    money_radius = Math.min(money_width, money_height)/1.5;
 
-var money_svg = d3.select("body").append("svg")
+var money_svg = d3.select(".spanChart2").append("svg")
     .attr("width", (money_width + money_margin.left + money_margin.right) * 2)
     .attr("height", (money_height + money_margin.top + money_margin.bottom))
     .append("g")
@@ -12,9 +12,9 @@ var money_svg = d3.select("body").append("svg")
 
 money_svg.append("g")
     .append('text')
-    .attr("transform", "translate(" + money_width + ",0)")
-    .attr("dy", "1.20em")
-    .attr("font-size", "1.5em")
+    .attr("transform", "translate(150,0)")
+    .attr("dy", "1.0em")
+    .attr("font-size", "1.0em")
     .style("text-anchor", "middle")
     .style("fill", "black")
     .text("計程車司機每日平均所得");
@@ -48,14 +48,14 @@ d3.csv("./csvData/money_day_date.csv", function(d) {
     var money_donut_text = money_donut.append("text")
         .attr("transform", "translate(" + money_width + "," + money_height / 1.9 + ")")
         .attr("dy", "2.60em")
-        .attr("font-size", "1.5em")
+        .attr("font-size", "1.3em")
         .style("text-anchor", "middle")
         .style("fill", "black")
         .text("");
     var money_donut_text1 = money_donut.append("text")
         .attr("transform", "translate(" + money_width + "," + money_height / 1.9 + ")")
         .attr("dy", "3.80em")
-        .attr("font-size", "1.5em")
+        .attr("font-size", "1.3em")
         .style("text-anchor", "middle")
         .style("fill", "black")
         .text("");
@@ -63,7 +63,7 @@ d3.csv("./csvData/money_day_date.csv", function(d) {
     var money_donut_text2 = money_donut.append("text")
         .attr("transform", "translate(" + money_width + "," + money_height / 1.9 + ")")
         .attr("dy", ".00em")
-        .attr("font-size", "6em")
+        .attr("font-size", "5em")
         .style("text-anchor", "middle")
         .style("fill", "black")
         .text("");
