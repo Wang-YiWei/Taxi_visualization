@@ -175,7 +175,7 @@ d3.csv("csvData/0703empty.csv", function(error, data) {
             .text("")
             console.log(data.length)
             var temp_rate_arc = d3.arc()
-                .outerRadius(rate_radius - 50)
+                .outerRadius(rate_radius - 40)
                 .innerRadius(rate_radius - 100);
             var select_value = d3.select(this).data()[0].value;
             var select_key = d3.select(this).data()[0].index;
