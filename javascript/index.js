@@ -1,18 +1,20 @@
-$('.navbar').css('visibility', 'hidden');
-$(function() {
-    $(window).scroll(function() {
-        var scrollVal = $(this).scrollTop();
-        //console.log(scrollVal);
-        if (scrollVal > 0) {
-            $('.navbar').css('visibility', 'visible');
-        } else {
-            $('.navbar').css('visibility', 'hidden');
-        }
-    });
-});
-
+// $('.navbar').css('visibility', 'hidden');
+// $(function() {
+//     $(window).scroll(function() {
+//         var scrollVal = $(this).scrollTop();
+//         //console.log(scrollVal);
+//         if (scrollVal > 0) {
+//             $('.navbar').css('visibility', 'visible');
+//         } else {
+//             $('.navbar').css('visibility', 'hidden');
+//         }
+//     });
+// });
+$(".mainCover").css("margin-top", "-50px");
 $(".mainCover").width(window.screen.availWidth);
 $(".mainCover").height(window.innerHeight);
+$(".middleText").css("margin-top", "-20px");
+$(".middleText").height("160px");
 $(".news").height("450px");
 // console.log(window.screen.availWidth);
 // console.log(window.innerHeight);

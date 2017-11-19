@@ -11,6 +11,10 @@ body {
     font-family: 'Noto Sans TC';
 }
 
+.mainCover {
+    background-color: #E9E9E9;
+}
+
 .cover {
     width: 100%;
     height: 100%;
@@ -43,7 +47,8 @@ body {
     color: #FFD382;
 }
 
-.carousel-caption {
+
+/* .carousel-caption {
     position: absolute;
     right: 40%;
     bottom: 20 px;
@@ -74,4 +79,4 @@ h3 {
 #c2 h3,
 #c2 p {
     color: #0000C6;
-}
+} */
