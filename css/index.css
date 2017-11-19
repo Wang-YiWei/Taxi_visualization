@@ -5,14 +5,24 @@
 
 html,
 body {
-    background-color: #f8f8f8;
+    background-color: #ffffff;
     /* padding-top: 50px; */
     height: 100%;
     font-family: 'Noto Sans TC';
 }
 
+ui li {
+    font-family: 'Noto Sans TC';
+    color: green;
+}
+
+ui li a {
+    font-family: 'Noto Sans TC';
+    color: green;
+}
+
 .mainCover {
-    background-color: #E9E9E9;
+    background-color: #ffffff;
 }
 
 .cover {
@@ -48,35 +58,42 @@ body {
 }
 
 
-/* .carousel-caption {
+/* .middleText {
     position: absolute;
-    right: 40%;
-    bottom: 20 px;
-    left: 40%;
-    z-index: 10;
-    padding-top: 20 px;
-    padding-bottom: 20 px;
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 1 px 2 px rgba(0, 0, 0, .6);
-    width: 20%;
-    border: 3px solid #FFD382;
-    opacity: 10%;
-}
-
-.carousel-caption p,
-h3 {
-    color: #FFD382;
-}
-
-#c1,
-#c2 {
-    border: 3 px solid #6A6AFF;
-}
-
-#c1 h3,
-#c1 p,
-#c2 h3,
-#c2 p {
-    color: #0000C6;
+    bottom: 30%;
+    right: 10%;
 } */
+
+.titleText {
+    font-family: 'Noto Sans TC';
+    position: absolute;
+    top: 30%;
+    left: 60%;
+}
+
+.titleText0 {
+    font-family: 'Noto Sans TC';
+    font-size: 20px;
+    position: absolute;
+    top: 45%;
+    left: 64%;
+}
+
+.titleText1 {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 69%;
+}
+
+.titleText2 {
+    font-family: 'Noto Sans TC';
+    font-size: 20px;
+    position: absolute;
+    top: 55%;
+    left: 67%;
+}
+
+.news {
+    box-shadow: 3px 3px 3px 3px #eeeeee;
+}
